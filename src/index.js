@@ -13,12 +13,12 @@ const loaderEl = document.querySelector('.loader');
 const errorEl = document.querySelector('.error');
 
 errorEl.style.display = 'none';
-loaderEl.style.display = 'none';
+loaderEl.style.display = 'block';
 
 selectBreed.addEventListener('change', onSelectResult);
 
-function createOptions() {
-  loaderEl.style.display = 'block';
+function createOptions(e) {
+  loaderEl.style.display = 'none';
   console.log(catInfo);
 
   fetchBreeds()
@@ -29,7 +29,7 @@ function createOptions() {
       }
     });
 }
-
+catInfo.innerHTML = '';
 function getAllIds(arr) {
   for (let i = 0; i < arr.length; i += 1) {
     let value = arr[i].id;
