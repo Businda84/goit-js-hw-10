@@ -55,7 +55,7 @@ createOptions();
 //rendering by chosen cat breed
 function onSelectResult() {
   const breedId = selectedBreed();
-
+  catInfo.innerHTML = ' ';
   fetchCatByBreed(breedId)
     .then(renderingCatImg)
     .catch(error => console.log(error));
